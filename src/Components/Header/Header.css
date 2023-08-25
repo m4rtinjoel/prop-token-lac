@@ -1,4 +1,4 @@
-.header-container {
+/* .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,8 +46,12 @@
 }
 
 @media (max-width: 950px) {
-  .links {
+  /* .links {
     display: none;
+  } 
+
+  .nav-menu.open {
+    display: block;
   }
 
   .navbar {
@@ -76,7 +80,174 @@
   }
 
   .nav-menu {
-    display: none;
-    /* Agrega más estilos según tus necesidades */
+    display: block;
+    
+  }
+ }  */
+ 
+
+/*-------------------------------------------------------------------------------------*/
+
+
+/* Estilos para el menú desplegable en pantalla principal */
+.links {
+  display: none;
+}
+
+.linksI a {
+  text-decoration: none;
+  color: rgb(17, 61, 206);
+  margin: 0 10px;
+  font-size: 23px;
+}
+
+
+/* Estilos para el menú desplegable en modo responsivo */
+@media (max-width: 950px) {
+  .links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
+
+/* Estilos para el encabezado */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+}
+
+.logo {
+  order: 0;
+}
+
+.logo img {
+  width: 115px;
+  height: 65px;
+}
+
+.header-items {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.links a {
+  text-decoration: none;
+  color: rgb(38, 48, 77);
+  margin: 0 10px;
+  font-size: 23px;
+}
+
+.acceder {
+  order: 2;
+}
+
+.acceder input {
+  background: rgb(17, 10, 212);
+  width: 130px;
+  height: 30px;
+  border: none;
+  font-size: 23px;
+  border-radius: 15px;
+  color: rgb(243, 243, 243);
+}
+
+/* Estilos para el botón de hamburguesa y menú desplegable en pantallas pequeñas */
+@media (max-width: 950px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .linksI{
+    display: none;
+    
+  }
+
+  .hamburger-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+
+  .bar {
+    width: 30px;
+    height: 4px;
+    background-color: rgb(38, 48, 77);
+    transition: transform 0.3s ease;
+  }
+
+  /* Aplica la clase .hidden al botón Acceder cuando el menú hamburguesa esté abierto o en pantallas <= 400px */
+  .hamburger-button.open .acceder{
+  @media (max-width: 400px) {
+    .acceder {
+      display: none;
+    }
+  }}
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu a {
+    color: rgb(38, 48, 77);
+    padding: 15px 0;
+    font-size: 23px;
+  }
+
+  .hamburger-button.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-button.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-button.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .links {
+    display: none;
+  }
+
+  .nav-menu.open .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .acceder {
+    order: 2;
+  }
+}
+
+
+
