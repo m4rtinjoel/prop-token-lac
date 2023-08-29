@@ -1,0 +1,117 @@
+
+   /* -------------------------------------------------------------------------------------- */
+ /* Estilos para el contenedor principal de la página */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh; /* Establece el alto mínimo al 100% de la ventana gráfica */
+    margin-bottom: 50px; /* Agrega un espacio en la parte inferior */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-top: 50px;
+  }
+  
+  /* Estilo para el contenedor de la sección copyright */
+.copyright {
+  flex-direction: column;
+  display: flex; /* Utiliza flexbox para el diseño */
+  justify-content: space-between; /* Alinea los elementos en los lados opuestos */
+  width: 80%;
+  gap: 30px; /* Aumenta el espacio entre los elementos */
+  flex-grow: 1;
+  
+}
+
+/* Estilo para las etiquetas <a> dentro de la sección copyright */
+.copyright .copy a {
+  text-align: left; ;
+  color: #000; /* Color de texto para los enlaces */
+  text-decoration: none; /* Elimina la subraya de los enlaces si lo deseas */
+ 
+  
+}
+
+/* Estilo para las etiquetas <img> dentro de la sección copyright */
+.copyright .copy img {
+  text-align: right; /*
+  width: 24px; /* Define un ancho para las imágenes */
+  height: 24px; /* Define una altura para las imágenes */
+}
+
+  /* Establece un margen superior para .footer-column para separar las columnas verticalmente */
+.footer .footer-column {
+  flex: 1;
+  margin: 10px 10px ; /* Ajusta los márgenes superior e inferior para separar las columnas */
+  margin-top: auto;
+  text-align: left;
+  height: 450px;
+}
+
+ /* Agrega un borde a la derecha de cada columna, excepto la última */
+ .footer-column:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+  .footer {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.231);
+    width: 80%;
+    margin: 50px auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 50px;
+  }
+
+  .footer .logo {
+    max-width: 200px;
+    height: 90px;
+    margin-right: 20px;
+  }
+  
+  .footer-column .Enviar{
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 60px;
+    height: 30px;
+    box-shadow: 0px 0px 0px 1px rgb(0,  55, 255);
+    background-color: #ffffff;
+  }
+
+  .footer .footer-column p,
+  .footer .footer-column h4 {
+    margin-top: 0; /* Elimina el margen superior predeterminado de estos elementos */
+  }
+  
+
+  .footer .footer-column .form-email{
+    border-radius: 20px;
+    border: 1px solid #000000;
+    height: 20px;
+  }
+
+  .footer .footer-column .form-comentario{
+    border-radius: 10px;
+    border: 1px solid #000000;
+    height: 70px;
+  }
+  
+  .footer a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+
+  
