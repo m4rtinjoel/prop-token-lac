@@ -96,7 +96,7 @@
 
 .linksI a {
   text-decoration: none;
-  color: rgb(17, 61, 206);
+  color: rgb(5, 5, 5);
   margin: 0 10px;
   font-size: 23px;
 }
@@ -113,13 +113,16 @@
 
 /* Estilos para el encabezado */
 .header-container {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: rgb(255, 255, 255);
-  padding: 10px 20px;
+  background: linear-gradient(to right top,  rgb(254, 254, 254),rgb(215, 236, 250), rgba(0, 136, 255, 0.721));
+  
+/* Esto hace que el degradado se vea solo en la esquina superior izquierda */
+background-origin: content-box;
 }
 
 .logo {
@@ -127,8 +130,10 @@
 }
 
 .logo img {
-  width: 115px;
+  width: 135px;
   height: 65px;
+  margin-left: 50px;
+  
 }
 
 .header-items {
@@ -249,5 +254,5 @@
   }
 }
 
-
+/* -------------------------------------------------------------------------------------------------------- */
 

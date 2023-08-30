@@ -1,0 +1,78 @@
+.contenedor-principal {
+    position: relative;
+  }
+  
+  .principal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 237, 237);
+    z-index: -1;
+  }
+  
+  .imagen-con-texto {
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    width: 90%;
+  }
+  
+  .imagen-con-texto img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 50px;
+    margin-top: 5vh; /* Ajusta el margen superior según tus preferencias */
+    margin-bottom: 5vh; /* Ajusta el margen inferior según tus preferencias */
+  }
+  
+  .texto-superpuesto {
+    position: absolute;
+    top: 20%;
+    left: 32vw;
+    transform: translate(-50%, -50%);
+    font-size: 3vw; /* Puedes ajustar el tamaño del texto según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    /* background-color: rgba(0, 0, 0, 0.5); Cambia el fondo del texto según tus preferencias */
+    padding: 20px 20px; /* Ajusta el espacio alrededor del texto */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor de texto */
+    z-index: 2;
+    text-align: left; 
+  }
+  .texto-superpuesta {
+    position: absolute;
+    top: 50%;
+    left: 40vw;
+    transform: translate(-5%, -50%);
+    font-size: 2vw; /* Puedes ajustar el tamaño del texto según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    /* background-color: rgba(0, 0, 0, 0.5); Cambia el fondo del texto según tus preferencias */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor de texto */
+    z-index: 2;
+    text-align: left;
+  }
+  .texto-superpueste {
+    position: absolute;
+    top: 65%;
+    left: 40vw;
+    transform: translate(-5%, -50%);
+    font-size: 2vw; /* Puedes ajustar el tamaño del texto según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    /* background-color: rgba(0, 0, 0, 0.5); Cambia el fondo del texto según tus preferencias */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor de texto */
+    z-index: 2;
+    text-align: left;
+  }
+  .texto-superpuesti {
+    position: absolute;
+    top: 62%;
+    left: 12vw;
+    transform: translate(-5%, -50%);
+    font-size: 2vw; /* Puedes ajustar el tamaño del texto según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    background-color: rgba(4, 8, 255, 0.5); /* Cambia el fondo del texto según tus preferencias */
+    border-radius: 15px; /* Agrega bordes redondeados al contenedor de texto */
+    z-index: 2;
+    text-align: left;
+    padding: 10px 70px; /* Ajusta el espacio alrededor del texto */
+  }

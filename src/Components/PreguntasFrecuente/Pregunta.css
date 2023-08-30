@@ -1,0 +1,29 @@
+/* Estilos para el contenedor principal */
+.faq-container {
+    display: flex;
+    justify-content: space-between; /* Separa las dos columnas horizontalmente */
+  }
+  
+  /* Estilos para la columna de preguntas */
+  .pregunta-column {
+    flex: 1;
+    padding: 10px;
+    background-color: #f8f8f8;
+    
+  }
+
+  .faq-container{
+    text-align: center;
+  }
+  
+  /* Estilos para la columna de respuestas */
+  .respuesta-column {
+    flex: 1;
+    padding: 10px;
+    background-color: #0000ff;
+    border-radius: 20px;
+  }
+  
+  .respuesta-column ul{
+    color: #f8f8f8;
+  }

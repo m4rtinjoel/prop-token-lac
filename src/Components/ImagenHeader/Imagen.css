@@ -1,0 +1,30 @@
+.imaheader {
+  position: relative;
+  z-index: -1;
+}
+
+.scalable-image {
+  width: 100%;
+  height: auto;
+  max-width: 100vw;
+  max-height: 70vh; /* Puedes ajustar esto según tus preferencias */
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  z-index: 0; 
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 6vw; /* Puedes ajustar el tamaño del texto según tus preferencias */
+  color: #fff; /* Cambia el color del texto según tus preferencias */
+  background-color: rgba(0, 0, 0, 0.5); /* Cambia el fondo del texto según tus preferencias */
+  padding: 10px 20px; /* Ajusta el espacio alrededor del texto */
+  border-radius: 10px; /* Agrega bordes redondeados al contenedor de texto */
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+}

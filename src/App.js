@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route,useHistory } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { React, useState, useEffect } from "react";
 import "./App.css";
 import Inicio from "./Components/Inicio/Inicio";
@@ -7,6 +7,10 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Web3 from "web3"
 import Login from "./Components/Login/Login";
+import Imagen from "./Components/ImagenHeader/Imagen";
+import Imgdeposito from "./Components/ImagenDeposito/Imgdeposito";
+import FaqComponent from "./Components/PreguntasFrecuente/Pregunta";
+
 
  
 
@@ -15,7 +19,7 @@ function App() {
   const [web3, setWeb3] = useState(null);
   const [account, setAccount] = useState(null);
   const [balance, setBalance] = useState(null);
-  const history = useHistory();
+  // const history = useHistory();
 
 
   const conectarWallet = async () => {
@@ -36,7 +40,7 @@ function App() {
         setBalance(balanceEth);
 
         //redirige a otra página
-        history.push('/login');
+        // history.push('/login');
       }catch(e){
           console.log("error: ", e);
       }
@@ -65,8 +69,6 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/login" element={<Login cuenta={account} saldo={balance} />} />
         </Routes>
- 
-
       </BrowserRouter>
     </div>
   );
@@ -75,10 +77,14 @@ function App() {
   function Home() {
   return (<>
       <Header connectionWallet={conectarWallet}/>
+      <Imagen></Imagen>
+      <Imgdeposito></Imgdeposito>
+      <FaqComponent></FaqComponent>
       <Routes >
         <Route path="/" element={<Inicio  />} />
         <Route path="/inmuebles" element={<Inmueble />} />
       </Routes>
+      
       <Footer />  
 
   </>)
