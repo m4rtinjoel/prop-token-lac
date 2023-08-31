@@ -8,6 +8,12 @@ import Footer from "./Components/Footer/Footer";
 import Web3 from "web3";
 import Login from "./Components/Login/Login";
 import FaqComponent from "./Components/PreguntasFrecuente/Pregunta";
+import { Web3Button } from '@web3modal/react'
+
+import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
+import { Web3Modal } from '@web3modal/react'
+import { configureChains, createConfig, WagmiConfig } from 'wagmi'
+import { arbitrum, mainnet, polygon } from 'wagmi/chains'
 
 function App() {
   const [Metamask, setMetamask] = useState(false);
@@ -45,17 +51,22 @@ function App() {
 
     console.log("tenemos conectarWallet");
   };
-  // useEffect(() => {
-  //   async function Wallet() {
-  //     if (typeof window.ethereum !== "undefined") {
-  //       setMetamask(true);
-  //     } else {
-  //       setMetamask(false);
-  //     }
-  //   }
-  //   Wallet();
-  // }, []);
+
+  // Conectando WalletConnect
+
+  const chains = [arbitrum, mainnet, polygon]
+  const projectId = 'YOUR_PROJECT_ID'
+
+  const { publicClient } = configureChains(chains, [w3mProvider({ projectId: "3ac2664116164f8e791268281ac3ec50" })])
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors: w3mConnectors({ projectId:"3ac2664116164f8e791268281ac3ec50", chains }),
+    publicClient
+  })
+  const ethereumClient = new EthereumClient(wagmiConfig, chains)
+
   return (
+
     <div className="app-container">
       <BrowserRouter>
         <Routes>
@@ -65,9 +76,15 @@ function App() {
           </Route>
 
            {/* Rutas para el Login de la página */}
-          <Route path="/Login" element={<Login />}></Route>
+          <Route path="/Login" element={<Login conectar={conectarWallet}/>}></Route>
         </Routes>
       </BrowserRouter>
+
+      {/* Connect wallet */}
+      <WagmiConfig config={wagmiConfig}>
+       <Web3Button />
+      </WagmiConfig>
+      <Web3Modal projectId={"3ac2664116164f8e791268281ac3ec50"} ethereumClient={ethereumClient} />
     </div>
   );
 

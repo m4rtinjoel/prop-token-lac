@@ -1,6 +1,6 @@
 import React from "react";
 
-const Login = () => {
+const Login = (props) => {
 
     return (
         <>
@@ -23,10 +23,7 @@ const Login = () => {
             </div>
 
             <div>
-                <button>Metamask</button>
-            </div>
-            <div>
-                <button>Wallet connect</button>
+                <button onClick={props.conectar}>Metamask</button>
             </div>
             <div>
                 <button>Iniciar sesión con Google</button>
