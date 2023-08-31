@@ -59,11 +59,13 @@ function App() {
     <div className="app-container">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/login"
-            element={<Login cuenta={account} saldo={balance} />}
-          />
+          {/* Rutas para el inicio de la página */}
+          <Route path="*" element={<Home />} >
+
+          </Route>
+
+           {/* Rutas para el Login de la página */}
+          <Route path="/Login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
