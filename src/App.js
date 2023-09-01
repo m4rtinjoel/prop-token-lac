@@ -55,7 +55,7 @@ function App() {
   // Conectando WalletConnect
 
   const chains = [arbitrum, mainnet, polygon]
-  const projectId = 'YOUR_PROJECT_ID'
+  const projectId = '3ac2664116164f8e791268281ac3ec50'
 
   const { publicClient } = configureChains(chains, [w3mProvider({ projectId: "3ac2664116164f8e791268281ac3ec50" })])
   const wagmiConfig = createConfig({
