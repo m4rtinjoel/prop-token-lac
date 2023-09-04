@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import "./Header.css";
 import Logo from "../../images/logo.png";  
+import { Link } from "react-router-dom";
+
 
 
 // Definición del componente funcional Header
@@ -25,11 +27,11 @@ const Header = (props) => {
        {/* Enlaces de navegación en el encabezado */}
       <div className="header-items">
         <div className="linksI">
-            <a href="/">Inicio</a>
-            <a href="/inmuebles">Inmuebles</a>
-            <a href="#">Blog</a>
-            <a href="#">Nosotros</a>
-            <a href="#" >Ayuda</a>
+            <Link to="/">Inicio</Link>
+            <Link to="/inmuebles">Inmuebles</Link>
+            <Link to="#">Blog</Link>
+            <Link to="#">Nosotros</Link>
+            <Link to="#" >Ayuda</Link>
           </div>
           </div>
           
@@ -37,11 +39,11 @@ const Header = (props) => {
       <div className={`navbar ${isOpen ? "open" : ""}`}>
         <div className="header-items">
         <div className="links">
-            <a href="/">Inicio</a>
-            <a href="/inmuebles">Inmuebles</a>
-            <a href="#">Blog</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Ayuda</a>
+            <Link to="/">Inicio</Link>
+            <Link to="/inmuebles">Inmuebles</Link>
+            <Link to="#">Blog</Link>
+            <Link to="#">Nosotros</Link>
+            <Link to="#">Ayuda</Link>
           </div>
           </div>
         
@@ -50,26 +52,26 @@ const Header = (props) => {
           <input type="button" value="Acceder" />
         </div> */}
       
-        <navar className={`hamburger-button ${isOpen ? "open" : ""}`}
+        <nav className={`hamburger-button ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
-        </navar>
+        </nav>
         
         {/* Menú desplegable */}
         <nav className={`nav-menu ${isOpen ? "open" : ""}`} id="navMenu">
           <div className="links">
-            <a href="/">Inicio</a>
-            <a href="/inmuebles">Inmuebles</a>
-            <a href="#">Blog</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Ayuda</a>
+            <Link to="/">Inicio</Link>
+            <Link to="/inmuebles">Inmuebles</Link>
+            <Link to="#">Blog</Link>
+            <Link to="#">Nosotros</Link>
+            <Link to="#">Ayuda</Link>
           </div>
 
-          {/* Botón Acceder dentro del menú hamburguesa */}
+          {/* Botón Acceder dentro del menú hamburguesa |  onClick={props.connectionWallet}*/}
           <div className={`acceder ${isOpen ? "hidden" : ""}`}>
-            <button  href="/login" onClick={props.connectionWallet} >Acceder</button>
+            <Link to="/Login"> Acceder </Link>
           </div>
         </nav>
         </div>

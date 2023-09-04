@@ -12,8 +12,17 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Web3 from "web3";
 import Login from "./Components/Login/Login";
-
 import InmuebleFinal from "./Components/InmuebleFinal/InmuebleFInal";
+import { Web3Button } from "@web3modal/react";
+
+import {
+  EthereumClient,
+  w3mConnectors,
+  w3mProvider,
+} from "@web3modal/ethereum";
+import { Web3Modal } from "@web3modal/react";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { arbitrum, mainnet, polygon } from "wagmi/chains";
 
 function App() {
   const [Metamask, setMetamask] = useState(false);
@@ -42,7 +51,6 @@ function App() {
         setBalance(balanceEth);
 
         //redirige a otra página
-        // history.push('/login');
       } catch (e) {
         console.log("error: ", e);
       }
@@ -53,22 +61,13 @@ function App() {
 
     console.log("tenemos conectarWallet");
   };
-  // useEffect(() => {
-  //   async function Wallet() {
-  //     if (typeof window.ethereum !== "undefined") {
-  //       setMetamask(true);
-  //     } else {
-  //       setMetamask(false);
-  //     }
-  //   }
-  //   Wallet();
-  // }, []);
+  /**Validando rutas */
   let page = useParams();
   useEffect(() => {
     setRuta(false);
 
     console.log(location.pathname);
-    if (location.pathname === "/login" || location.pathname === "/ruta") {
+    if (location.pathname === "/Login" || location.pathname === "/ruta") {
       setRuta(false);
     } else {
       setRuta(true);
@@ -76,20 +75,49 @@ function App() {
 
     console.log(ruta);
   }, [page]);
+
+  // Conectando WalletConnect
+
+  const chains = [arbitrum, mainnet, polygon];
+  const projectId = "3ac2664116164f8e791268281ac3ec50";
+
+  const { publicClient } = configureChains(chains, [
+    w3mProvider({ projectId: "3ac2664116164f8e791268281ac3ec50" }),
+  ]);
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors: w3mConnectors({
+      projectId: "3ac2664116164f8e791268281ac3ec50",
+      chains,
+    }),
+    publicClient,
+  });
+  const ethereumClient = new EthereumClient(wagmiConfig, chains);
+
   return (
     <div className="app-container">
+      {/* validadndo la ruta */}
       {ruta && <Header connectionWallet={conectarWallet} />}
 
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/inmuebles" element={<InmuebleFinal />} />
         <Route
-          path="/login"
+          path="/Login"
           element={<Login cuenta={account} saldo={balance} />}
         />
         <Route path="/ruta" element="Hola" />
       </Routes>
       {ruta && <Footer />}
+
+      {/* Connect wallet */}
+      <WagmiConfig config={wagmiConfig}>
+        <Web3Button />
+      </WagmiConfig>
+      <Web3Modal
+        projectId={"3ac2664116164f8e791268281ac3ec50"}
+        ethereumClient={ethereumClient}
+      />
     </div>
   );
 }
