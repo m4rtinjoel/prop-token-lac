@@ -24,6 +24,7 @@ import MasInmueble from "./MasInmueble/MasInmueble";
 import "./Inicio.css";
 import Imagen from "./ImagenHeader/Imagen";
 import Imgdeposito from "./ImagenDeposito/Imgdeposito";
+import FaqComponent from "./PreguntasFrecuente/Pregunta";
 
 const Inicio = () => {
   return (
@@ -204,6 +205,7 @@ const Inicio = () => {
         <MasInmueble imagen={Casa2} ubicacion="Chalatenago" precio="50,000" />
         <MasInmueble imagen={Casa2} ubicacion="Chalatenago" precio="50,000" />
       </div>
+      <FaqComponent />
     </>
   );
 };

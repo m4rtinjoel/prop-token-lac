@@ -1,19 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import { React, useState, useEffect } from "react";
 import "./App.css";
 import Inicio from "./Components/Inicio/Inicio";
-import Inmueble from "./Components/Inmuebles/Inmueble";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Web3 from "web3";
 import Login from "./Components/Login/Login";
-import FaqComponent from "./Components/PreguntasFrecuente/Pregunta";
+
+import InmuebleFinal from "./Components/InmuebleFinal/InmuebleFInal";
 
 function App() {
   const [Metamask, setMetamask] = useState(false);
   const [web3, setWeb3] = useState(null);
   const [account, setAccount] = useState(null);
   const [balance, setBalance] = useState(null);
+  const [ruta, setRuta] = useState(false);
+  const location = useLocation();
   // const history = useHistory();
 
   const conectarWallet = async () => {
@@ -55,34 +63,35 @@ function App() {
   //   }
   //   Wallet();
   // }, []);
+  let page = useParams();
+  useEffect(() => {
+    setRuta(false);
+
+    console.log(location.pathname);
+    if (location.pathname === "/login" || location.pathname === "/ruta") {
+      setRuta(false);
+    } else {
+      setRuta(true);
+    }
+
+    console.log(ruta);
+  }, [page]);
   return (
     <div className="app-container">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/login"
-            element={<Login cuenta={account} saldo={balance} />}
-          />
-        </Routes>
-      </BrowserRouter>
+      {ruta && <Header connectionWallet={conectarWallet} />}
+
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/inmuebles" element={<InmuebleFinal />} />
+        <Route
+          path="/login"
+          element={<Login cuenta={account} saldo={balance} />}
+        />
+        <Route path="/ruta" element="Hola" />
+      </Routes>
+      {ruta && <Footer />}
     </div>
   );
-
-  function Home() {
-    return (
-      <>
-        <Header connectionWallet={conectarWallet} />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/inmuebles" element={<Inmueble />} />
-        </Routes>
-        <FaqComponent></FaqComponent>
-
-        <Footer />
-      </>
-    );
-  }
 }
 
 export default App;
