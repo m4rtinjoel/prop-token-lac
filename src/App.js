@@ -23,6 +23,7 @@ import {
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { arbitrum, mainnet, polygon } from "wagmi/chains";
+import SessionMenu from "./Components/SessionMenu/SessionMenu";
 
 function App() {
   const [Metamask, setMetamask] = useState(false);
@@ -61,13 +62,14 @@ function App() {
 
     console.log("tenemos conectarWallet");
   };
+
   /**Validando rutas */
   let page = useParams();
   useEffect(() => {
     setRuta(false);
 
     console.log(location.pathname);
-    if (location.pathname === "/Login" || location.pathname === "/ruta") {
+    if (location.pathname === "/Login" || location.pathname === "/SessionMenu") {
       setRuta(false);
     } else {
       setRuta(true);
@@ -88,7 +90,7 @@ function App() {
     autoConnect: true,
     connectors: w3mConnectors({
       projectId: "3ac2664116164f8e791268281ac3ec50",
-      chains,
+      chains,  
     }),
     publicClient,
   });
@@ -106,7 +108,7 @@ function App() {
           path="/Login"
           element={<Login cuenta={account} saldo={balance} />}
         />
-        <Route path="/ruta" element="Hola" />
+        <Route path="/SessionMenu" element={<SessionMenu/>} />
       </Routes>
       {ruta && <Footer />}
 
