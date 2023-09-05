@@ -1,0 +1,125 @@
+/* Estilos para el contenedor principal */
+.container {
+  width: 100%;
+  height: 660px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: #367bcf;
+}
+
+.terminos {
+  margin-right: 980px;
+  color: white;
+}
+
+/* Estilos para el primer div arriba */
+.primer-div {
+  height: 100px;
+  background-color: #367bcf;
+  color: rgb(12, 12, 12);
+  padding: 20px;
+  margin-bottom: auto;
+}
+
+.logo {
+  float: left;
+  margin-bottom: auto;
+}
+
+/* Estilos para el segundo div */
+.segundo-div {
+  height: 500px;
+  width: 30%;
+  padding: 20px;
+  float: left;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to bottom,
+    rgb(165, 165, 165) 0%,
+    rgb(152, 152, 152) 10%,
+    #367bcf 50%,
+    #367bcf 100%
+  );
+  background-position: right;
+  background-size: 95% 100%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.imagen {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+.imagen img {
+  margin-right: 10px;
+}
+
+.texto-menu {
+  color: white;
+}
+
+.menu-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #021094;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+}
+
+/* Estilos para el tercer div */
+.tercer-div {
+  height: 500px;
+  width: 70%;
+  padding: 20px;
+  float: left;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to bottom,
+    rgb(165, 165, 165) 0%,
+    rgb(152, 152, 152) 10%,
+    #367bcf 50%,
+    #367bcf 100%
+  );
+}
+
+/* Estilos para limpiar el float y evitar que afecte a otros elementos */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Media Queries para estilos responsivos en dispositivos móviles */
+@media (max-width: 400px) {
+  .container {
+    height: auto;
+  }
+
+  .segundo-div {
+    width: 100%;
+  }
+
+  .col-md-4 {
+    display: none;
+  }
+
+  .col-md-8 {
+    width: 100%;
+  }
+}
