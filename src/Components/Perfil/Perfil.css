@@ -1,0 +1,78 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcfcfc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  form {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #bfe0a8;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(201, 3, 3, 0.1);
+  }
+  
+  .campo {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    margin-left: 0px;
+  }
+
+  label.imagen-seleccionada {
+    color: transparent; /* Cambia el color del label a transparente */
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #1305de;
+    border-radius: 4px;
+    font-size: 16px;
+
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+    align-self: center;
+    text-align: left;
+   
+    display: flex; 
+  }
+  
+  .boton {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .check.check.p{
+    margin-top: auto;
+  }

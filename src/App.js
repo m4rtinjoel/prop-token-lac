@@ -14,6 +14,8 @@ import Web3 from "web3";
 import Login from "./Components/Login/Login";
 import InmuebleFinal from "./Components/InmuebleFinal/InmuebleFInal";
 import { Web3Button } from "@web3modal/react";
+import Wallet from "./Components/Wallet/Wallet";
+import Perfil from "./Components/Perfil/Perfil";
 
 import {
   EthereumClient,
@@ -107,6 +109,8 @@ function App() {
           element={<Login cuenta={account} saldo={balance} />}
         />
         <Route path="/ruta" element="Hola" />
+        <Route path="/Wallet" element={<Wallet />} />
+        <Route path="/Perfil" element={<Perfil />} />
       </Routes>
       {ruta && <Footer />}
 
