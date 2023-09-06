@@ -1,43 +1,41 @@
 import React from "react";
+import "./Login.css";
 
 const Login = (props) => {
-
-    return (
-        <>
-          <div className="container">
-            <h2>Inicia cesión</h2>
-            <form>
-                <div>
-                    <label htmlFor="correo">Correo: </label>
-                    <input type="email" id="correo" placeholder="Ingrese su nombre" />
-                </div>
-                <div>
-                    <label htmlFor="contra">Contraseña: </label>
-                    <input type="password" id="contra" placeholder="Ingrese una contrseña segura" />
-                </div>
-                <button>Iniciar Sesion</button>
-            </form>
-
-            <div>
-               <h5>No tienes una cuenta? <a href="#">Registrate</a></h5>
-            </div>
-
-            <div>
-                <button onClick={props.conectar}>Metamask</button>
-            </div>
-            <div>
-                <button>Iniciar sesión con Google</button>
-            </div>
-
-            <div>
-                <div>
-                    <button>Facebook</button>
-                </div>
-            </div>
-
+  return (
+    <section className="contendor-contenedor-login">
+      <div className="contenedor-login">
+        <h3>Acceder</h3>
+        <form action="" class="formulario-login">
+          <div>
+            <label htmlFor="">Correo eléctronico</label>
+            <input type="email" name="" id="" class="input-login" />
           </div>
-        </>
-    )
-}
+          <div>
+            <label htmlFor="">Contraseña</label>
+            <input type="password" name="" id="" class="input-login" />
+          </div>
+          <div class="">
+            <input type="checkbox" />
+            <label>
+              <a href="">Terminos y condiciones</a>
+            </label>
+          </div>
+          <button type="submit" className="buttons-acceder login">
+            Login
+          </button>
+        </form>
+        <hr></hr>
+        <button class="" type="submit" className="buttons-acceder google">
+          <i class=""></i> Acceder con google
+        </button>
+        <button class="" type="submit" className="buttons-acceder facebook">
+          <i class=""></i>Acceder con facebook
+        </button>
+        <a href="">¿Aún no tienes cuenta?</a>
+      </div>
+    </section>
+  );
+};
 
 export default Login;

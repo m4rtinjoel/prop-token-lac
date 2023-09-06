@@ -39,9 +39,9 @@ const Inmueble = (props) => {
           <p>Extención</p>
           <p>{props.extencion} m</p>
         </div>
-        <div className="ver-mas">
-          <a href="">Ver más</a>
-        </div>
+        <a href="/login" className="ver-mas">
+          Ver más
+        </a>
       </div>
     </>
   );

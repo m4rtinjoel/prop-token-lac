@@ -11,7 +11,7 @@ const MasInmueble = (props) => {
           <p>{props.precio} $</p>
         </div>
         <div className="ver-mas">
-          <a href="">Ver más</a>
+          <a href="/login">Ver más</a>
         </div>
       </div>
     </>

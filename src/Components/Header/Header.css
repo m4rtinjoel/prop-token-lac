@@ -1,93 +1,4 @@
-/* .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: rgb(255, 255, 255);
-}
-.navbar {
-  display: none;
-}
-.logo {
-  margin-left: 10%;
-}
-
-.logo img {
-  width: 115px;
-  height: 65px;
-}
-.links {
-  margin-right: 14%;
-}
-
-.links a {
-  text-decoration: none;
-  color: rgb(38, 48, 77);
-  padding: 0 20px;
-  font-size: 23px;
-}
-
-.links a:hover {
-  color: rgb(49, 79, 170);
-  font-size: 26px;
-}
-.acceder {
-  margin-right: 10%;
-}
-.acceder input {
-  background: rgb(17, 10, 212);
-  width: 130px;
-  height: 30px;
-  border: none;
-  font-size: 23px;
-  border-radius: 15px;
-  color: rgb(243, 243, 243);
-}
-
-@media (max-width: 950px) {
-  /* .links {
-    display: none;
-  } 
-
-  .nav-menu.open {
-    display: block;
-  }
-
-  .navbar {
-    background-color: rgb(17, 10, 212);
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-  }
-
-  .hamburger-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-  }
-
-  .bar {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-  }
-
-  .nav-menu {
-    display: block;
-    
-  }
- }  */
- 
-
 /*-------------------------------------------------------------------------------------*/
-
 
 /* Estilos para el menú desplegable en pantalla principal */
 .links {
@@ -101,7 +12,6 @@
   font-size: 23px;
 }
 
-
 /* Estilos para el menú desplegable en modo responsivo */
 @media (max-width: 950px) {
   .links.open {
@@ -113,16 +23,20 @@
 
 /* Estilos para el encabezado */
 .header-container {
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  background: linear-gradient(to right top,  rgb(254, 254, 254),rgb(215, 236, 250), rgba(0, 136, 255, 0.721));
-  
-/* Esto hace que el degradado se vea solo en la esquina superior izquierda */
-background-origin: content-box;
+  background: linear-gradient(
+    to right top,
+    rgb(254, 254, 254),
+    rgb(215, 236, 250),
+    rgba(0, 136, 255, 0.721)
+  );
+
+  /* Esto hace que el degradado se vea solo en la esquina superior izquierda */
+  background-origin: content-box;
 }
 
 .logo {
@@ -133,7 +47,6 @@ background-origin: content-box;
   width: 135px;
   height: 65px;
   margin-left: 50px;
-  
 }
 
 .header-items {
@@ -141,7 +54,6 @@ background-origin: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .links a {
@@ -173,9 +85,8 @@ background-origin: content-box;
     align-items: center;
   }
 
-  .linksI{
+  .linksI {
     display: none;
-    
   }
 
   .hamburger-button {
@@ -197,12 +108,13 @@ background-origin: content-box;
   }
 
   /* Aplica la clase .hidden al botón Acceder cuando el menú hamburguesa esté abierto o en pantallas <= 400px */
-  .hamburger-button.open .acceder{
-  @media (max-width: 400px) {
-    .acceder {
-      display: none;
+  .hamburger-button.open .acceder {
+    @media (max-width: 400px) {
+      .acceder {
+        display: none;
+      }
     }
-  }}
+  }
 
   .nav-menu {
     display: none;
@@ -255,4 +167,3 @@ background-origin: content-box;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
-

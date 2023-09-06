@@ -1,0 +1,51 @@
+.contenedor-login {
+  max-width: 400px;
+  margin: 40px auto 0;
+  text-align: center;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.contenedor-login h3 {
+  font-size: 35px;
+}
+
+.formulario-login {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px 1px rgba(184, 183, 183, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-login {
+  display: block;
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid rgb(136, 129, 124);
+}
+
+.buttons-acceder {
+  display: block;
+  margin: 25px auto 20px;
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+.login {
+  background-color: rgba(22, 34, 171, 0.8);
+}
+
+.google {
+  background-color: rgba(171, 52, 22, 0.8);
+}
+
+.facebook {
+  background-color: rgba(0, 21, 255, 1);
+}

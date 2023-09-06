@@ -11,15 +11,17 @@ const Imgdeposito = () => {
           <h1 className="texto-superpuesto">
             Título y depósito en garantía por propiedad
           </h1>
-          <h1 className="texto-superpuesta">
-            Cierre su próxima transacción inmobiliaria con{" "}
-          </h1>
-          <h1 className="texto-superpueste">
+          <h3 className="texto-superpuesta">
+            Cierre su próxima transacción inmobiliaria con
+          </h3>
+          <h3 className="texto-superpueste">
             servicios de títulos y depósito de garantia.
-          </h1>
-          <button className="texto-superpuesti">Empezar</button>
+          </h3>
         </div>
       </div>
+      <a href="/login" className="texto-superpuesti">
+        Empezar
+      </a>
     </div>
   );
 };

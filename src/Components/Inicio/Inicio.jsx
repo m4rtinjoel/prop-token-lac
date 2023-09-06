@@ -174,9 +174,9 @@ const Inicio = () => {
             extencion="1220"
           />
         </div>
-        <div className="ver-listado">
-          <a href="">Ver listado</a>
-        </div>
+        <a href="/inmuebles" className="ver-listado">
+          Ver listado
+        </a>
       </div>
 
       <div className="facilidad-facilidad">
