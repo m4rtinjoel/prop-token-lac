@@ -1,8 +1,22 @@
-/*-------------------------------------------------------------------------------------*/
-
 /* Estilos para el menú desplegable en pantalla principal */
+.header-container{
+  z-index: 2; /* Un valor mayor que el z-index del carousel */
+}
 .links {
   display: none;
+  text-align: center;
+}
+
+.enlace{
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.5s ease; /* Transición suave de 0.2 segundos */
+}
+.enlace:hover {
+  transform: translateY(-5px); /* Mueve el elemento hacia arriba 5px cuando se hace hover */
 }
 
 .linksI a {
@@ -10,6 +24,29 @@
   color: rgb(5, 5, 5);
   margin: 0 10px;
   font-size: 23px;
+}
+
+.acceder {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.btnacceder {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.btnacceder:hover {
+  background-color: #0056b3;
 }
 
 /* Estilos para el menú desplegable en modo responsivo */
@@ -34,16 +71,15 @@
     rgb(215, 236, 250),
     rgba(0, 136, 255, 0.721)
   );
-
   /* Esto hace que el degradado se vea solo en la esquina superior izquierda */
   background-origin: content-box;
 }
 
-.logo {
+.logi {
   order: 0;
 }
 
-.logo img {
+.logi img {
   width: 135px;
   height: 65px;
   margin-left: 50px;
@@ -65,17 +101,7 @@
 
 .acceder {
   order: 2;
-}
-
-.acceder input {
-  background: rgb(17, 10, 212);
-  width: 130px;
-  height: 30px;
-  border: none;
-  font-size: 23px;
-  border-radius: 15px;
-  color: rgb(243, 243, 243);
-}
+} 
 
 /* Estilos para el botón de hamburguesa y menú desplegable en pantallas pequeñas */
 @media (max-width: 950px) {
@@ -104,39 +130,50 @@
     width: 30px;
     height: 4px;
     background-color: rgb(38, 48, 77);
-    transition: transform 0.3s ease;
+    transition: transform 2s ease;
   }
 
-  /* Aplica la clase .hidden al botón Acceder cuando el menú hamburguesa esté abierto o en pantallas <= 400px */
-  .hamburger-button.open .acceder {
-    @media (max-width: 400px) {
-      .acceder {
-        display: none;
-      }
-    }
+  /* Elimina la clase "hidden" al botón Acceder para que se muestre en la página principal */
+  .acceder {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    
   }
 
+  /* Estilos para el menú desplegable */
   .nav-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    right: 0;
-    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 69px;
+    right: -100%;
+    width: 250px;
+    height: 95%;
+    background-color: #9feaff;
+    transition: right 0.5s ease-in-out;
+    z-index: 5;
   }
 
   .nav-menu.open {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    right: 0;
+  }
+
+  /* Estilos para el fondo oscuro de superposición */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
   }
 
   .nav-menu a {
     color: rgb(38, 48, 77);
-    padding: 15px 0;
+    padding: 15px 20px;
     font-size: 23px;
+    display: block;
+    line-height: 1.5;
   }
 
   .hamburger-button.open .bar:nth-child(1) {
@@ -156,14 +193,13 @@
   }
 
   .nav-menu.open .links {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
   }
 
+  /* Elimina la clase "hidden" para mostrar el botón Acceder en la página principal */
   .acceder {
     order: 2;
   }
 }
-
-/* -------------------------------------------------------------------------------------------------------- */

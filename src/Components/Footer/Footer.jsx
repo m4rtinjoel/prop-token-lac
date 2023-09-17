@@ -22,9 +22,12 @@ const Footer = () => {
       setTextColor("black"); // Cambia a negro el texto cuando se hace clic en "sol"
       setSolColor("black"); // Cambia a negro la imagen del sol cuando se hace clic en "sol"
     } else if (imageName === "luna") {
-      setBackgroundColor("gray"); // Cambia a negro cuando se hace clic en "luna"
+      setBackgroundColor("lightblue"); // Cambia a negro cuando se hace clic en "luna"
       setTextColor("white"); // Cambia a blanco el texto cuando se hace clic en "luna"
       setSolColor("white"); // Cambia a blanco la imagen del sol cuando se hace clic en "luna"
+
+      // Agrega la clase de fondo de luna
+    document.querySelector(".page-container").classList.add("luna-background");
     }
   };
 
@@ -80,44 +83,48 @@ const Footer = () => {
             <input type="checkbox" id="miCasilla" name="miCasilla"></input>
             <label htmlFor="miCasilla">Acepto términos y condiciones</label>
           </p>
-          <p>
+          
             <button className="Enviar">Enviar</button>
-          </p>
+          
         </div>
       </footer>
 
       <div className="copyright">
-        <div className="copy">
-        <span style={{ color: textColor }} >©️ 2023 PropToken</span>{" "}|{" "}
-        <a href="" style={{ color: textColor }}>
-          política de privacidad
-        </a>{" "}
-        |{" "}
-        <a href="" style={{ color: textColor }}>
-          Política de cookies
-        </a>{" "}
-        |{" "}
-        <a href="" style={{ color: textColor }}>
-          Términos y condiciones
-        </a>
-        {" "}
-        ||
-        {" "}
-        
-        <img
-          src={sol}
-          alt="sol"
-          onClick={() => handleImageClick("sol")}
-          style={{ filter: backgroundColor === "gray" ? "invert(1)" : "invert(0)", color: solColor }}
-        />
-        <img src={luna} alt="luna" onClick={() => handleImageClick("luna")} />
+      <div className="copy">
+        <div className="enla">
+  <span style={{ color: textColor }}>©️ 2023 PropToken</span>{" "}|{" "}
+  <a href="" style={{ color: textColor }}>
+    política de privacidad
+  </a>{" "}
+  |{" "}
+  <a href="" style={{ color: textColor }}>
+    Política de cookies
+  </a>{" "}
+  |{" "}
+  <a href="" style={{ color: textColor }}>
+    Términos y condiciones
+  </a>{" "}
+  </div>
+  
+  <div className="iconos-derecha">
+    <img
+      src={sol}
+      alt="sol"
+      onClick={() => handleImageClick("sol")}
+      style={{
+        filter: backgroundColor === "gray" ? "invert(1)" : "invert(0)",
+        color: solColor,
+      }}
+    />
+    <img src={luna} alt="luna" onClick={() => handleImageClick("luna")} />
+    <img src={facebook} alt="fb" />
+    <img src={instagram} alt="in" />
+    <img src={twitter} alt="tw" />
+    <img src={whatssap} alt="wsp" />
+    
+  </div>
+</div>
 
-        <img src={facebook} alt="fb" />
-        <img src={instagram} alt="in" />
-        <img src={twitter} alt="tw" />
-        <img src={whatssap} alt="wsp" />
-        <img src={youtube} alt="ytb" />
-        </div>
       </div>
     </div>
   );

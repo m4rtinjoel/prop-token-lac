@@ -30,8 +30,7 @@ const Inicio = () => {
   return (
     <>
       <Imagen />
-      <div className="container">
-        <p>Invierte como los grandes gracias a la tecnología</p>
+        <p className="ini">Invierte como los grandes gracias a la tecnología</p>
         <div className="card">
           <Card
             imagen={Box}
@@ -72,7 +71,7 @@ const Inicio = () => {
             PropToken LAC, lo hace todo por ti y tu tranquilida
           </p>
         </div>
-      </div>
+      
       <div className="inmueble-inmueble">
         <h2>Lista destacadas</h2>
         <h3>Una colección seleccionada de nuestras propiedades</h3>
@@ -198,6 +197,9 @@ const Inicio = () => {
             descripcion="Una vez elijas tu inmueble, pued einvertir con cripto, guardo tus tokens e irás recibiendo tus rendimientos todos los meses"
           />
         </div>
+        <a href="/inmuebles" className="ver-listado">
+          Empieza Invertir
+        </a>
       </div>
       <Imgdeposito />
       <div className="mas-inmuebles">

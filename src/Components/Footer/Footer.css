@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     min-height: 75vh; /* Establece el alto mínimo al 100% de la ventana gráfica */
-    margin-bottom: 50px; /* Agrega un espacio en la parte inferior */
+    margin-bottom: 10px; /* Agrega un espacio en la parte inferior */
     align-items: center; /* Centra verticalmente el contenido */
     margin-top: 50px;
   }
@@ -18,23 +18,33 @@
   width: 80%;
   gap: 30px; /* Aumenta el espacio entre los elementos */
   flex-grow: 1;
-  
+}
+
+/* Estilo para la clase .copy en la sección copyright */
+.copy {
+  display: flex; /* Crea una fila con los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content:space-between; /* Alinea los elementos en el extremo izquierdo */
+}
+
+/* Estilo para los elementos de iconos */
+.copy .iconos-derecha img {
+  margin-right: 15px; /* Ajusta el espacio entre los iconos */
 }
 
 /* Estilo para las etiquetas <a> dentro de la sección copyright */
-.copyright .copy a {
+.copyright  a {
   text-align: left; ;
   color: #000; /* Color de texto para los enlaces */
   text-decoration: none; /* Elimina la subraya de los enlaces si lo deseas */
- 
-  
 }
 
 /* Estilo para las etiquetas <img> dentro de la sección copyright */
-.copyright .copy img {
+.copyright img {
   text-align: right; /*
   width: 24px; /* Define un ancho para las imágenes */
   height: 24px; /* Define una altura para las imágenes */
+
 }
 
   /* Establece un margen superior para .footer-column para separar las columnas verticalmente */
@@ -62,12 +72,14 @@
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.231);
     width: 80%;
+    height: auto;
     margin: 50px auto;
     bottom: 0;
     left: 0;
     right: 0;
     align-items: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    flex-wrap: wrap;
     margin-top: 50px;
   }
 
@@ -84,6 +96,7 @@
     height: 30px;
     box-shadow: 0px 0px 0px 1px rgb(0,  55, 255);
     background-color: #ffffff;
+    
   }
 
   .footer .footer-column p,
@@ -114,4 +127,87 @@
   }
   
 
-  
+  /* Estilos para el contenedor principal de la página */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh;
+  margin-bottom: 10px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Estilo para el contenedor de la sección copyright */
+.copyright {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+/* Estilo para la clase .copy en la sección copyright */
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilo para los elementos de iconos */
+.copy .iconos-derecha img {
+  margin-right: 15px;
+}
+
+/* Estilo para las etiquetas <a> dentro de la sección copyright */
+.copyright a {
+  text-align: left;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilo para las etiquetas <img> dentro de la sección copyright */
+.copy img {
+  text-align: right;
+  width: 24px;
+  height: 24px;
+}
+
+/* CSS para el fondo degradado cuando la luna está seleccionada */
+.luna-background {
+  background: linear-gradient(to bottom, #ffffff,  #dcebfc, #c1deff, #70cffe); /* Cambia estos valores a los colores que desees para el degradado */
+  transition: background 0.5s; /* Agrega una transición suave de medio segundo */
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 400px) {
+  .footer {
+    flex-direction: column;
+   
+    height: auto;
+  }
+
+  .footer .footer-column {
+    margin: 10px 0;
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer .logo {
+    max-width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .footer-column .Enviar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .footer .iconos-derecha img {
+    margin-right: 10px;
+  }
+}

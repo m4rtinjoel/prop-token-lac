@@ -17,6 +17,9 @@ import Perfil from "./Components/Perfil/Perfil";
 import SessionMenu from "./Components/SessionMenu/SessionMenu";
 import InmuebleFinal from "./Components/InmuebleFinal/InmuebleFInal";
 
+import VistaInmueble from "./Components/VistaInmueble/VistaInmueble";
+
+
 function App() {
   const [ruta, setRuta] = useState(false);
   const location = useLocation();
@@ -38,6 +41,8 @@ function App() {
 
     console.log(ruta);
   }, [page]);
+
+  const isVistaInmuebleRoute = location.pathname === "/VistaInmueble";
   return (
     <div className="app-container">
       {/* validadndo la ruta */}
@@ -50,6 +55,11 @@ function App() {
         <Route path="/Wallet" element={<Wallet />} />
         <Route path="/Perfil" element={<Perfil />} />
         <Route path="/SessionMenu" element={<SessionMenu />} />
+        <Route
+        path="/VistaInmueble"
+        element={<VistaInmueble inVistaInmueble={isVistaInmuebleRoute} />}
+      />
+      
       </Routes>
       {ruta && <Footer />}
     </div>

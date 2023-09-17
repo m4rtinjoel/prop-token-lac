@@ -3,7 +3,7 @@ import "./Inmueble.css";
 
 const Inmueble = (props) => {
   return (
-    <>
+    <div className="todo">
       <div className="contariner-inmuebles">
         <img src={props.imagen} alt="" />
         <div className="inmueble_principal">
@@ -39,11 +39,11 @@ const Inmueble = (props) => {
           <p>Extención</p>
           <p>{props.extencion} m</p>
         </div>
-        <a href="/login" className="ver-mas">
+        <a href="/VistaInmueble" className="ver-mas">
           Ver más
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

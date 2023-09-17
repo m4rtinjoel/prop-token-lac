@@ -3,68 +3,98 @@ import "./Header.css";
 import Logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 
-// Definición del componente funcional Header
 const Header = () => {
-  // Estado local para controlar si el menú está abierto o cerrado
   const [isOpen, setIsOpen] = useState(false);
 
-  // Función para alternar entre abrir y cerrar el menú
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className="header-container">
-      {/* Logotipo */}
-      <div className="logo">
-        <img src={Logo} alt="logo" />
-      </div>
-      {/* Enlaces de navegación en el encabezado */}
-      <div className="header-items">
-        <div className="linksI">
-          <Link to="/">Inicio</Link>
-          <Link to="/inmuebles">Inmuebles</Link>
-          <Link to="/login">Verder & Comprar</Link>
-          <Link to="/ayuda">Ayuda</Link>
+    <>
+      {isOpen && <div className="overlay" onClick={toggleMenu}></div>}
+      <div className="header-container">
+        <div className="logi">
+          <img src={Logo} alt="logi" />
         </div>
-      </div>
-
-      {/* Barra de navegación (visible en pantallas más pequeñas) */}
-      <div className={`navbar ${isOpen ? "open" : ""}`}>
         <div className="header-items">
-          <div className="links">
-            <Link to="/">Inicio</Link>
-            <Link to="/inmuebles">Inmuebles</Link>
-            <Link to="/login">Vender & Comprar</Link>
-            <Link to="ayuda">Ayuda</Link>
+          <div className="linksI">
+            <Link className="enlace" to="/" onClick={closeMenu}>
+              Inicio
+            </Link>
+            <Link className="enlace" to="/inmuebles" onClick={closeMenu}>
+              Inmuebles
+            </Link>
+            <Link className="enlace" to="/login" onClick={closeMenu}>
+              Vender
+            </Link>
+            <Link className="enlace" to="/login" onClick={closeMenu}>
+              Comprar
+            </Link>
+            <Link className="enlace" to="/ayuda" onClick={closeMenu}>
+              Ayuda
+            </Link>
           </div>
         </div>
-        <nav
-          className={`hamburger-button ${isOpen ? "open" : ""}`}
-          onClick={toggleMenu}
-        >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </nav>
-
-        {/* Menú desplegable */}
-        <nav className={`nav-menu ${isOpen ? "open" : ""}`} id="navMenu">
-          <div className="links">
-            <Link to="/">Inicio</Link>
-            <Link to="/inmuebles">Inmuebles</Link>
-            <Link to="#">Blog</Link>
-            <Link to="#">Nosotros</Link>
-            <Link to="#">Ayuda</Link>
+        <div className={`navbar ${isOpen ? "open" : ""}`}>
+          <div className="header-items">
+            <div className="links">
+              <Link className="enlace" to="/" onClick={closeMenu}>
+                Inicio
+              </Link>
+              <Link className="enlace" to="/inmuebles" onClick={closeMenu}>
+                Inmuebles
+              </Link>
+              <Link className="enlace" to="/login" onClick={closeMenu}>
+                Vender
+              </Link>
+              <Link className="enlace" to="/login" onClick={closeMenu}>
+                Comprar
+              </Link>
+              <Link className="enlace" to="/ayuda" onClick={closeMenu}>
+                Ayuda
+              </Link>
+            </div>
+            <div className={`acceder ${isOpen ? "" : ""}`}>
+              <Link className="btnacceder" to="/login">
+                Acceder
+              </Link>
+            </div>
           </div>
-
-          {/* Botón Acceder dentro del menú hamburguesa |  onClick={props.connectionWallet}*/}
-          <div className={`acceder ${isOpen ? "hidden" : ""}`}>
-            <Link to="/login"> Acceder </Link>
+          <div
+            className={`hamburger-button ${isOpen ? "open" : ""}`}
+            onClick={toggleMenu}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </div>
-        </nav>
+          <nav className={`nav-menu ${isOpen ? "open" : ""}`} id="navMenu">
+            <div className="links">
+              <Link className="enlace" to="/" onClick={closeMenu}>
+                Inicio
+              </Link>
+              <Link className="enlace" to="/inmuebles" onClick={closeMenu}>
+                Inmuebles
+              </Link>
+              <Link className="enlace" to="/login" onClick={closeMenu}>
+                Vender
+              </Link>
+              <Link className="enlace" to="/login" onClick={closeMenu}>
+                Comprar
+              </Link>
+              <Link className="enlace" to="/ayuda" onClick={closeMenu}>
+                Ayuda
+              </Link>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

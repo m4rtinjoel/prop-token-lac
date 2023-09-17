@@ -1,10 +1,17 @@
+
 .contariner-inmuebles {
   width: 300px;
   border-radius: 20px;
   overflow: hidden;
-
+  background-color: rgba(169, 217, 252, 0.604);
   border: 1px solid bisque;
-  margin: 0 auto 30px;
+  margin: 30px;
+  transition: transform 0.3s, margin 0.5s ; /* Agrega una transición suave para el efecto */ 
+}
+
+.contariner-inmuebles:hover{
+  margin-bottom: 90px; /* Agrega espacio inferior al hacer hover */
+  
 }
 
 .contariner-inmuebles img {

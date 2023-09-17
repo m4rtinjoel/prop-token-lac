@@ -1,9 +1,20 @@
-.container {
-  background-color: rgba(218, 225, 232, 0.195);
+.ini{
+  text-align: center;
+  background: #1e0388;
+  color: white;
+  border-radius: 50px;
+  width: 90%;
+  margin: 50px auto;
+  font-size: 25px;
 }
+
 .inmueble-inmueble_card {
   padding-top: 20px;
-  background-color: rgba(218, 225, 232, 0.195);
+  background-color: rgb(255, 255, 255);
+}
+
+.ver-listado{
+margin-top: 10px;
 }
 
 .mas-inmuebles {
